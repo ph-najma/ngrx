@@ -1,0 +1,45 @@
+<div class="table-container">
+  <div class="table-header">
+    <button class="add-new-btn" routerLink="/createUser">Add New</button>
+  </div>
+
+  <table>
+    <thead>
+      <tr>
+        <th scope="col">Sr no</th>
+        <th scope="col">Name</th>
+        <th scope="col">Sname</th>
+        <th scope="col">Email</th>
+        <th scope="col">Mobile No</th>
+
+        <th scope="col">Delete</th>
+        <th scope="col">update</th>
+      </tr>
+    </thead>
+    <tbody>
+      @for(item of userList; track $index){
+      <tr>
+        <td>{{ $index + 1 }}</td>
+        <td>{{ item.name }}</td>
+        <td>{{ item.sname }}</td>
+        <td>{{ item.email }}</td>
+        <td>{{ item.mobileNo }}</td>
+
+        <td>
+          <button (click)="onDelete(item._id)" class="btn btn-danger">
+            Delete
+          </button>
+        </td>
+        <td>
+          <a
+            class="add-new-btn"
+            [routerLink]="['/updateUser']"
+            [queryParams]="{ id: userId }"
+            >update</a
+          >
+        </td>
+      </tr>
+      }
+    </tbody>
+  </table>
+</div>

@@ -1,0 +1,150 @@
+<header id="header">
+  <!--  Brand Logo  -->
+  <a class="nav-brand" href="" target="_blank">
+    <img
+      id="header-img"
+      src="https://i.postimg.cc/8czjYqkS/Minimal-Premade-Logos-V02-04.png"
+      alt="Pixel Skincare"
+    />
+  </a>
+  <input type="checkbox" id="toggle-menu" role="button" />
+  <label for="toggle-menu" class="toggle-menu">Menu</label>
+  <!--  Menus  -->
+  <nav id="nav-bar" class="navbar">
+    <ul class="menu">
+      <li><a class="nav-link" href="#featured">New in!</a></li>
+      <li><a class="nav-link" href="#collections">Collections</a></li>
+      <li><a class="nav-link" href="#about">About</a></li>
+      <li><a class="nav-link" href="#contact">Contact</a></li>
+    </ul>
+    <ul class="social-menu">
+      <li>
+        <a href="#"><i class="fa fa-pinterest" aria-hidden="true"></i></a>
+      </li>
+      <li>
+        <a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+      </li>
+      <li>
+        <a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+      </li>
+      <li>
+        <a href="#"><i class="fa fa-youtube-play" aria-hidden="true"></i></a>
+      </li>
+    </ul>
+  </nav>
+</header>
+<div class="container">
+  <form action="">
+    <div class="row">
+      <div class="col-md-4">
+        <label for="validationCustom01" class="form-label">Full name</label>
+        <input
+          type="text"
+          [(ngModel)]="userObj.name"
+          class="form-control"
+          id="validationCustom01"
+          name="name"
+          required
+        />
+        <div class="valid-feedback">Looks good!</div>
+      </div>
+
+      <div class="col-md-4">
+        <label for="validationCustomUsername" class="form-label">Email</label>
+        <div class="input-group has-validation">
+          <span class="input-group-text" id="inputGroupPrepend">&#64;</span>
+          <input
+            type="text"
+            class="form-control"
+            [(ngModel)]="userObj.email"
+            id="validationCustomUsername"
+            aria-describedby="inputGroupPrepend"
+            name="email"
+            required
+          />
+          <div class="invalid-feedback">Please choose a Email.</div>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <label for="validationCustom03" class="form-label">Mobile No</label>
+        <input
+          type="text"
+          class="form-control"
+          [(ngModel)]="userObj.mobileNo"
+          id="validationCustom03"
+          name="mobileNo"
+          required
+        />
+        <div class="invalid-feedback">Please provide a valid city.</div>
+      </div>
+      <div class="col-md-3">
+        <label for="validationCustom03" class="form-label">City</label>
+        <input
+          type="text"
+          class="form-control"
+          [(ngModel)]="userObj.city"
+          id="validationCustom03"
+          name="city"
+          required
+        />
+        <div class="invalid-feedback">Please provide a valid city.</div>
+      </div>
+      <div class="col-md-3">
+        <label for="validationCustom03" class="form-label">Password</label>
+        <input
+          type="text"
+          class="form-control"
+          [(ngModel)]="userObj.password"
+          id="validationCustom03"
+          name="password"
+          required
+        />
+        <div class="invalid-feedback">Password</div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-6">
+        <label for="validationCustom05" class="form-label"
+          >Address Line 1</label
+        >
+        <textarea
+          name="address1"
+          class="form-control"
+          [(ngModel)]="userObj.address1"
+        ></textarea>
+        <div class="invalid-feedback">Please provide a valid zip.</div>
+      </div>
+      <div class="col-md-6">
+        <label for="validationCustom05" class="form-label"
+          >Address Line 2</label
+        >
+        <textarea
+          name="address2"
+          class="form-control"
+          [(ngModel)]="userObj.address2"
+        ></textarea>
+        <div class="invalid-feedback">Please provide a valid zip.</div>
+      </div>
+      <div class="col-12">
+        <div class="form-check">
+          <input
+            class="form-check-input"
+            type="checkbox"
+            value=""
+            id="invalidCheck"
+            required
+          />
+          <label class="form-check-label" for="invalidCheck">
+            Agree to terms and conditions
+          </label>
+          <div class="invalid-feedback">You must agree before submitting.</div>
+        </div>
+      </div>
+      <div class="col-12">
+        <button class="btn pt-3" type="button" (click)="update()">
+          update User
+        </button>
+      </div>
+    </div>
+  </form>
+</div>

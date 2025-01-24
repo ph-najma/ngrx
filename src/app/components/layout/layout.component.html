@@ -15,16 +15,12 @@
       <li><a class="nav-link" href="#featured">New in!</a></li>
       <li><a class="nav-link" href="#collections">Collections</a></li>
       <li><a class="nav-link" href="#about">About</a></li>
-      <li>
-        <a
-          class="nav-link"
-          [routerLink]="['/profile']"
-          [queryParams]="{ id: userId }"
-          >Profile</a
-        >
-      </li>
+
       <li>
         <a class="nav-link" (click)="navigateToProfile()"> Profile </a>
+      </li>
+      <li>
+        <a class="nav-link" (click)="onLogout()">Logout</a>
       </li>
     </ul>
     <ul class="social-menu">

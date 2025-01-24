@@ -10,23 +10,26 @@ import { UserService } from '../../service/user.service';
   styleUrl: './layout.component.css',
 })
 export class LayoutComponent {
-  userId: string | null | number = null; // Declare userId as a property of the class
+  userId: string | null | number = null; 
 
   userService = inject(UserService);
-  router = inject(Router); // Inject the UserService
+  router = inject(Router); 
 
   ngOnInit(): void {
-    this.loadUserId(); // Load userId on component initialization
+    this.loadUserId(); 
   }
 
-  // Example method to load userId
+  
   loadUserId() {
-    // Assuming you have a method in UserService to get the current user ID
+   
     this.userId = this.userService.getUserId();
   }
   navigateToProfile() {
     console.log('Navigating to profile with userId:', this.userId);
-    // This uses the Angular Router for navigation
+  
     this.router.navigate(['/profile'], { queryParams: { id: this.userId } });
+  }
+  onLogout() {
+    this.userService.logout();
   }
 }

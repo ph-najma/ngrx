@@ -10,9 +10,9 @@ import { provideAnimationsAsync } from '@angular/platform-browser/animations/asy
 import { provideHttpClient } from '@angular/common/http';
 import { provideStore, provideState } from '@ngrx/store';
 import { provideStoreDevtools } from '@ngrx/store-devtools';
-import { provideEffects } from '@ngrx/effects';
+
 import { provideRouterStore, routerReducer } from '@ngrx/router-store';
-import { UserEffects } from './store/user.effects';
+
 import { userReducer } from './store/user.reducer';
 import { MatNativeDateModule } from '@angular/material/core';
 
@@ -27,7 +27,7 @@ export const appConfig: ApplicationConfig = {
       name: 'user',
       reducer: userReducer,
     }),
-    provideEffects(UserEffects),
+
     provideStoreDevtools({ maxAge: 25, logOnly: false }),
     provideRouterStore(),
     importProvidersFrom(MatNativeDateModule),
